@@ -2,6 +2,7 @@ import React from 'react';
 import BookingList from './BookingList';
 import ReserveBookingForm from './ReserveBookingForm';
 import CancelBookingForm from './CancelBookingForm';
+import './styles.css'; 
 
 const App = () => {
   return (
