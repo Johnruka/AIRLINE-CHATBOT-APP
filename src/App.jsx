@@ -1,8 +1,8 @@
 import React from 'react';
-import BookingList from './BookingList';
-import ReserveBookingForm from './ReserveBookingForm';
-import CancelBookingForm from './CancelBookingForm';
-import './styles.css'; 
+import BookingList from './components/BookingList';
+import ReserveBookingForm from './components/ReserveBookingForm';
+import CancelBookingForm from './components/CancelBookingForm';
+import './App.css'; 
 
 const App = () => {
   return (
