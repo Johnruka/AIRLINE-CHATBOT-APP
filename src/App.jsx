@@ -2,15 +2,17 @@ import React from 'react';
 import BookingList from './components/BookingList';
 import ReserveBookingForm from './components/ReserveBookingForm';
 import CancelBookingForm from './components/CancelBookingForm';
-import './App.css'; 
+import Chatbot from './components/Chatbot';
+import './App.css';
 
 const App = () => {
   return (
-    <div>
+    <div className="container">
       <h1>Airline Reservation System</h1>
       <BookingList />
       <ReserveBookingForm />
       <CancelBookingForm />
+      <Chatbot />
     </div>
   );
 };
