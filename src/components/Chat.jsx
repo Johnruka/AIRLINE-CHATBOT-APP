@@ -5,26 +5,25 @@ import './Chat.css';
 const Chat = () => {
   const [messages, setMessages] = useState([]);
   const [currentMessage, setCurrentMessage] = useState('');
-  const chatId = 'exampleChatId'; // Replace with a dynamic chat ID if needed
+  const chatId = 'exampleChatId'; 
 
   const handleSendMessage = async () => {
-    if (!currentMessage.trim()) return; // Avoid sending empty messages
+    if (!currentMessage.trim()) return; 
 
-    // Add the user's message to the chat
     const newMessage = { user: 'You', text: currentMessage };
     setMessages([...messages, newMessage]);
 
     try {
-      // Make POST request to the chat API
+      
       const response = await axios.post('http://localhost:8080/api/assistant/reactive/chat', {
         chatId,
         message: currentMessage,
       });
 
-      // Log the response to debug
+  
       console.log('API Response:', response.data);
 
-      // Handle different response types
+      
       if (Array.isArray(response.data)) {
         response.data.forEach((message) => {
           addBotMessage(message);
@@ -37,11 +36,9 @@ const Chat = () => {
       addBotMessage('Sorry, there was an error processing your request.');
     }
 
-    // Clear the input field
     setCurrentMessage('');
   };
 
-  // Function to add bot message to the chat
   const addBotMessage = (messageText) => {
     const botMessage = { user: 'AI', text: messageText };
     setMessages((msg) => [...msg, botMessage]);
